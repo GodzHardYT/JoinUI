@@ -27,7 +27,6 @@ class Main extends PluginBase implements Listener {
     	$Title = $this->getConfig()->get("Title");
 		$Description = $this->getConfig()->get("Description");
 		$Button = $this->getConfig()->get("Button");
-		$Button2 = $this->getConfig()->get("Button2");
         $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         $form = $api->createSimpleForm(function (Player $player, int $data = null) {
 			$Command = $this->getConfig()->get("Command");
@@ -48,7 +47,11 @@ class Main extends PluginBase implements Listener {
         $form->setTitle($Title);
         $form->setContent($Description);
         $form->addButton($Button);
-		$form->addButton($Button2);
+		$Button2 = $this->getConfig()->get("Button2");
+		$Buttonon = $this->getConfig()->get("Button2-On");
+		if ($Button2 == "true") {
+			if ($form->addButton($Buttonon));
+		}
         $form->sendToPlayer($player);
         return $form;
         }

@@ -10,7 +10,8 @@ Description: Custom plugin created by GodzHard
 #The first button is to close the UI
 Button: Close
 #The second button is to open a command of your choice (you can delete it if you don't want to)
-Button2: Open Rules
+Button2: "true"
+Button2-On: Ok
 #Command is to set the command of the second button
 Command: info
 
